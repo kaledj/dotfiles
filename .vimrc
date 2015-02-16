@@ -28,15 +28,20 @@ autocmd! bufwritepost .vimrc source %
 
 set shell=/bin/tcsh
 
+let g:airline#extensions#tabline#enabled = 1
 let NERDTreeDirArrows=0
+let g:airline_section_c='%{getcwd()}/%t'
+let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='wombat'
+"let g:airline_theme='gotham'
 let g:airline_powerline_fonts=1
 set laststatus=2
 
 syntax enable
 colorscheme monokai
+"colorscheme gotham
 
 set encoding=utf-8
 
@@ -90,8 +95,14 @@ nmap gl <C-w>l
 nmap <C-l> gt
 nmap <C-h> gT
 
+nmap <C-j> <C-e>
+
+nmap <C-k> <C-y>
 " :T <filename> opens file in new tab
 command! -complete=file -nargs=1 T tabedit <args>
+
+" :V vertical split
+command! -complete=file -nargs=1 V vsplit <args>
 
 " Format file as JSON
 command! Json %!python -m json.tool

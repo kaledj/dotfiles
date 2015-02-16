@@ -11,6 +11,7 @@ alias ls='ls --color=auto'
 alias la='ls -a --color=auto'
 alias lal='ls -al --color=auto'
 
+export LD_LIBRARY_PATH=~/lib tmux
 PATH=.:/u/csgs/kaledj/bin:$PATH
 
 # Set up prompt
