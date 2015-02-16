@@ -26,7 +26,7 @@ filetype plugin indent on
 " For showing off .vimrc
 autocmd! bufwritepost .vimrc source %
 
-set shell=/bin/tcsh
+set shell=/bin/bash
 
 let g:airline#extensions#tabline#enabled = 1
 let NERDTreeDirArrows=0
