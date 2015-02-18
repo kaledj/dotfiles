@@ -12,7 +12,7 @@ alias la='ls -a --color=auto'
 alias lal='ls -al --color=auto'
 
 export LD_LIBRARY_PATH=~/lib tmux
-PATH=.:/u/csgs/kaledj/bin:$PATH
+export PATH=.:~/bin:$PATH
 
 # Set up prompt
 force_color_prompt=yes
@@ -34,3 +34,9 @@ else
 fi
 unset color_prompt force_color_prompt
 
+if [ "$TERM" = "rxvt-unicode-256color" ]; then
+    export HAS_256_COLORS=yes
+    export TERM=xterm-256color
+fi
+
+export TERM=xterm-256color
