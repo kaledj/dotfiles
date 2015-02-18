@@ -5,6 +5,9 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# User aliases
+alias nautilus='nautilus --no-desktop'
+alias please='sudo $(history -p \!\!)'
 alias sl='ls --color=auto'
 alias l='ls --color=auto'
 alias ls='ls --color=auto'
@@ -33,10 +36,4 @@ else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
-
-if [ "$TERM" = "rxvt-unicode-256color" ]; then
-    export HAS_256_COLORS=yes
-    export TERM=xterm-256color
-fi
-
 export TERM=xterm-256color
