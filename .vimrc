@@ -16,9 +16,10 @@ Plugin 'mattn/webapi-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'sickill/vim-monokai'
+"Plugin 'sickill/vim-monokai'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -32,15 +33,21 @@ let g:airline#extensions#tabline#enabled = 1
 let NERDTreeDirArrows=0
 let g:airline_section_c='%{getcwd()}/%t'
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_theme='wombat'
+"let g:airline_left_sep=''
+"let g:airline_right_sep=''
+"let g:airline_theme='wombat'
+"let g:airline_theme='base16'
 "let g:airline_theme='gotham'
 let g:airline_powerline_fonts=1
-set laststatus=2
+
+set t_Co=256
 
 syntax enable
-colorscheme monokai
+"colorscheme monokai
+let base16colorspace=256
+set background=dark
+colorscheme base16-tomorrow
+set laststatus=2
 "colorscheme gotham
 
 set encoding=utf-8

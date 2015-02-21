@@ -14,8 +14,7 @@ alias ls='ls --color=auto'
 alias la='ls -a --color=auto'
 alias lal='ls -al --color=auto'
 
-export LD_LIBRARY_PATH=~/lib tmux
-export PATH=.:~/bin:$PATH
+PATH=.:~/bin:$PATH
 
 # Set up prompt
 force_color_prompt=yes
@@ -36,4 +35,9 @@ else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
-export TERM=xterm-256color
+#export TERM=xterm-256color
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
