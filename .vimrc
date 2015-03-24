@@ -56,7 +56,7 @@ set cursorline         " Highlight current line
 set number             " add line number for current line
 set title              " Show filename in titlebar
 set showcmd            " Show what command I'm typing
-set scrolloff=3        " Show me where I'm going
+set scrolloff=8        " Show me where I'm going
 set wildmenu           " Autocomplete commands
 set tabstop=4          " Set the tabstop to 2 spaces
 set shiftwidth=4       " Shiftwidth should match tabstop
