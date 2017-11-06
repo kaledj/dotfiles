@@ -1,54 +1,39 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
-
-" Using Vundle:
-" https://github.com/gmarik/Vundle.vim
-
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'rust-lang/rust.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'sickill/vim-monokai'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'chriskempson/base16-vim'
-
+Plugin 'bling/vim-bufferline'
 call vundle#end()
 filetype plugin indent on
 
+execute pathogen#infect()
+
 " For showing off .vimrc
-autocmd! bufwritepost .vimrc source %
+"autocmd! bufwritepost .vimrc source %
 
-set shell=/bin/bash
+set shell=/bin/zsh
 
-"let g:airline#extensions#tabline#enabled = 1
-let NERDTreeDirArrows=0
-let g:airline_section_c='%{getcwd()}/%t'
-let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline_left_sep=''
-"let g:airline_right_sep=''
-"let g:airline_theme='wombat'
-let g:airline_theme='base16'
-"let g:airline_theme='gotham'
+" No markdown folding
+let g:vim_markdown_folding_disabled = 1
+
+" Airline config
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_c=''
+let g:airline_theme='distinguished'
 let g:airline_powerline_fonts=1
 
+syntax on
 set t_Co=256
-
-syntax enable
-"colorscheme monokai
-let base16colorspace=256
-set background=dark
-colorscheme base16-tomorrow
+colors dracula
 set laststatus=2
-"colorscheme gotham
 
 set encoding=utf-8
 
@@ -113,16 +98,6 @@ command! -complete=file -nargs=1 V vsplit <args>
 
 " Format file as JSON
 command! Json %!python -m json.tool
-
-" Tab completion!
-function! SuperTab()
-  if (strpart(getline('.'),col('.')-2,1)=~'^\W\?$')
-    return "\<Tab>"
-  else
-    return "\<C-n>"
-  endif
-endfunction
-imap <Tab> <C-R>=SuperTab()<CR>
 
 " Strip trailing whitespace (\ss) (strip spaces)
 function! StripWhitespace()
